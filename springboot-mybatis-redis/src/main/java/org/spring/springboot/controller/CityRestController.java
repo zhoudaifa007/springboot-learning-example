@@ -23,7 +23,7 @@ public class CityRestController {
         return cityService.findCityById(id);
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/city", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8" )
     public void createCity(@RequestBody City city) {
         cityService.saveCity(city);
     }
