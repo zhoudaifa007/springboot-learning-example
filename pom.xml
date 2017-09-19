@@ -17,7 +17,6 @@
 		<module>springboot-dubbo-server</module>
 		<module>springboot-dubbo-client</module>
 		<module>springboot-validation-over-json</module>
-		<module>springboot-elasticsearch</module>
 
 		<!-- 基础 – 入门篇 -->
 		<!-- Spring Boot 之 HelloWorld 详解 -->
