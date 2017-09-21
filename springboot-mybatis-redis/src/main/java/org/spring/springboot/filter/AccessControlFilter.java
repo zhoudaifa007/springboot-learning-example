@@ -19,7 +19,7 @@ public class AccessControlFilter extends OncePerRequestFilter {
     {
         //设置允许跨域
         response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
         //允许content-type跨域
         response.setHeader("Access-Control-Allow-Headers", "x-requested-with,content-type");
         filterChain.doFilter(request, response);
