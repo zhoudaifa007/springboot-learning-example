@@ -20,6 +20,12 @@ public interface CityDao {
     List<City> findAllCity();
 
     /**
+     * 分页获取城市信息列表
+     * @return
+     */
+    List<City> findCityByPage();
+
+    /**
      * 根据城市 ID，获取城市信息
      *
      * @param id

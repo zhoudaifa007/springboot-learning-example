@@ -1,5 +1,6 @@
 package org.spring.springboot.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spring.springboot.dao.CityDao;
@@ -101,4 +102,10 @@ public class CityServiceImpl implements CityService {
         return ret;
     }
 
+
+    @Override
+    public List<City> findCityByPage(int index, int pageSize) {
+        PageHelper.startPage(index, pageSize);
+        return cityDao.findCityByPage();
+    }
 }

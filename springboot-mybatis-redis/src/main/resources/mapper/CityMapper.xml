@@ -27,6 +27,12 @@
 		from city
 	</select>
 
+	<select id="findCityByPage" resultMap="BaseResultMap" >
+		select
+		<include refid="Base_Column_List" />
+		from city
+	</select>
+
 	<insert id="saveCity" parameterMap="City" useGeneratedKeys="true" keyProperty="id">
 		insert into
 		city(id,province_id,city_name,description)

@@ -1,5 +1,6 @@
 package org.spring.springboot.controller;
 
+import com.github.pagehelper.PageInfo;
 import org.spring.springboot.domain.City;
 import org.spring.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,15 @@ public class CityRestController {
     @Autowired
     private CityService cityService;
 
-
     @RequestMapping(value = "/api/city/{id}", method = RequestMethod.GET)
     public City findOneCity(@PathVariable("id") Long id) {
         return cityService.findCityById(id);
+    }
+
+    @RequestMapping(value = "/api/city/page", method = RequestMethod.GET)
+    public PageInfo<City> findCity() {
+        List<City> cityList = cityService.findCityByPage(1,5);
+        return new PageInfo<City>(cityList);
     }
 
     @RequestMapping(value = "/api/city", method = RequestMethod.POST)

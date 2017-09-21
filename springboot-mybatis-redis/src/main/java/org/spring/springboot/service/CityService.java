@@ -41,4 +41,12 @@ public interface CityService {
      * @return
      */
     Long deleteCity(Long id);
+
+    /**
+     * 分页获取城市信息
+     * @param index
+     * @param pageSize
+     * @return
+     */
+    List<City> findCityByPage(int index, int pageSize);
 }
