@@ -1,7 +1,10 @@
 package org.spring.springboot.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.spring.springboot.domain.City;
 import org.spring.springboot.model.LoginParams;
+import org.spring.springboot.model.LogoutParams;
 import org.spring.springboot.model.ServerResponse;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +21,8 @@ import java.util.UUID;
 @RestController
 public class UserController {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
     public ServerResponse login(@RequestBody LoginParams loginParams) {
         String token = UUID.randomUUID().toString();
@@ -26,4 +31,10 @@ public class UserController {
         ServerResponse serverResponse = ServerResponse.successWithData(map);
         return serverResponse;
     }
+
+    @RequestMapping(value = "/api/logout", method = RequestMethod.POST)
+    public ServerResponse logout(@RequestBody LogoutParams loginParams) {
+        return new ServerResponse(null);
+    }
+
 }
